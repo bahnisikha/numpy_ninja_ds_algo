@@ -3,3 +3,4 @@ ExtendReports/*
 logs/*
 test-output/*
 target/*
+/target/
