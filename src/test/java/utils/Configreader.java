@@ -8,7 +8,7 @@ import java.util.Properties;
 public class Configreader {
 
 	public static Properties prop;
-	private final static String propertyFilePath = ".\\src\\test\\resources\\config\\config.properties";
+	private final static String propertyFilePath = "/Users/machome/git/numpy_ninja_ds_algo/src/test/resources/config/config.properties";
 	private static String browserType = null;
 
 	public static void readConfig() throws Throwable{
@@ -77,6 +77,13 @@ public class Configreader {
 			else 
 				throw new RuntimeException("ResisterPage not specified in the Config.properties file");
 		}
+		public static String getexcelfilepath() {
+			String excelfilelpath = prop.getProperty("excelFilePath");
+			if (excelfilelpath != null)
+				return excelfilelpath;
+			else
+				throw new RuntimeException("Excel file path not specified in the Configuration.properties file.");
+		}
 		
 		//SigninPage URL
 		
@@ -85,10 +92,43 @@ public class Configreader {
 			if (signinurl != null)
 				return signinurl;
 			else 
-				throw new RuntimeException("ResisterPage not specified in the Config.properties file");
-		
-		
+				throw new RuntimeException("ResisterPage not specified in the Config.properties file");	
 	}
+		//Array URL
+		public static String arrayPageURL() {
+			String arrayPageurl = prop.getProperty("Arraypage");
+			if (arrayPageurl != null)
+				return arrayPageurl;
+			else
+				throw new RuntimeException("Array Page url not specified in the Configuration.properties file.");
+		}
+		
+		// Array - Tryeditor
+		public static String tryEditorURL() {
+			String tryeditorurl = prop.getProperty("TryEditorPage");
+			if (tryeditorurl != null)
+				return tryeditorurl;
+			else
+				throw new RuntimeException("tryeditorurl not specified in the Configuration.properties file.");
+		}
+
+		public static String geturl(String pagename) {
+			String url = prop.getProperty(pagename);
+			if (url != null)
+				return url;
+			else
+				throw new RuntimeException(pagename + " url not specified in the Configuration.properties file.");
+		}
+		// Linked list
+		public static String getLinkedListUrl() {
+			String linkedlisturl = prop.getProperty("linkedlisturl");
+			if (linkedlisturl != null)
+				return linkedlisturl;
+			else
+				throw new RuntimeException("linked list url not specified in the Configuration.properties file.");
+		}
+
+	
 }
 	
 

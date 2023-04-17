@@ -24,8 +24,7 @@ public class Excelreader {
 
 	public List<Map<String, String>> getData(String excelFilePath, String sheetName) throws EncryptedDocumentException, IOException
 		{
-					////File file = new File(excelFilePath); // Replace with actual file path
-					//FileInputStream fis = new FileInputStream(file);
+					
 					Workbook workbook = WorkbookFactory.create(new File(excelFilePath));
 					Sheet sheet = workbook.getSheet(sheetName);
 					workbook.close();
